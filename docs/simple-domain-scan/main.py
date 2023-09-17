@@ -14,9 +14,15 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-from modsys.service.json.base import AbstractRestClient
+from modsys.client import Modsys
 
 
-class AbstractAVIDProvider(AbstractRestClient):
-    def create_report(self):
-        pass
+def detectText(domain):
+    # verify if domain is fraud
+    sdk = Modsys()
+    sdk.use(provider="scam_advisor", scam_advisor_api_key="api_key")
+    return sdk.detectText(domain="https://your_domain_here.com")
+
+
+if __name__ == "__main__":
+    detectText("some_domain")

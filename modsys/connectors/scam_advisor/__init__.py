@@ -14,9 +14,7 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-from modsys.service.json.base import AbstractRestClient
+from .cloud import ScamAdvisorProvider
+from .local import FakeScamAdvisorProvider
 
-
-class AbstractAVIDProvider(AbstractRestClient):
-    def create_report(self):
-        pass
+__all__ = ["ScamAdvisorProvider", "FakeScamAdvisorProvider"]

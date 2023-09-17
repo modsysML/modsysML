@@ -17,6 +17,9 @@
 from modsys.service.json.base import AbstractRestClient
 
 
-class AbstractAVIDProvider(AbstractRestClient):
-    def create_report(self):
+class AbstractScamAdvisorProvider(AbstractRestClient):
+    def set_preferrences(self, boolean):
+        pass
+
+    def call_api(self):
         pass

@@ -36,8 +36,11 @@ def evaluate_and_report():
         "community_id_can_be_None",
     )
 
+    # connect to the avid database
+    sdk.connect("avid")
+
     # send report based on output accuracy
-    return sdk.create_report(
+    return sdk.report(
         "provider_name",
         "ai-model",
         "dataset_name",
